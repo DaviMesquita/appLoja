@@ -29,14 +29,14 @@ public class Hidraulico extends Material {
 	public float calcularPrecoVenda() {
 		float tipo = 0;
 		
-		switch(this.getTipo()) {
-		case "Agua":
+		switch(this.getTipo().toUpperCase()) {
+		case "AGUA":
 			tipo = 3;
 			break;
-		case "Esgoto":
+		case "ESGOTO":
 			tipo = 1;
 			break;
-		case "Cola":
+		case "COLA":
 			tipo = 2;
 			break;
 		}
@@ -49,12 +49,12 @@ public class Hidraulico extends Material {
 	}
 	public void setTipo(String tipo) throws TipoInvalidoException{
 		
-		switch(tipo) {
-			case "Agua":
+		switch(tipo.toUpperCase()) {
+			case "AGUA":
 				break;
-			case "Esgoto":
+			case "ESGOTO":
 				break;
-			case "Cola":
+			case "COLA":
 				break;
 			default:
 				throw new TipoInvalidoException("Os tipos válidos são: Agua; Cola; Esgoto");
